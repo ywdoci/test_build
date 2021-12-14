@@ -21,18 +21,18 @@ jobs:
         
 
     - name: Grant execute permission for gradlew
-      run: chmod +x ./SourceCode/gradlew
+      run: chmod +x ./gradlew
   
 
     - name: Build with Gradle
-      run: ./SourceCode/gradlew build
+      run: ./gradlew build
 
       
     - name: Upload war file to artifact
       uses: actions/upload-artifact@v2
       with:
         name: war-package
-        path: ./SourceCode/build/libs/*.war
+        path: ./build/libs/*.war
 
     - name: Download war file from artifact
       uses: actions/download-artifact@v2
